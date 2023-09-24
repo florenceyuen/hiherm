@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class TextImporter4 : MonoBehaviour
 {
     public GameObject textBox;
@@ -41,13 +41,19 @@ public class TextImporter4 : MonoBehaviour
         }
         if(currentLine > endAtLine)
         {
-            textBox.SetActive(false);
-            dialogMode = false;
+            SceneManager.LoadScene("AddContent");
+            // textBox.SetActive(false);
+            // dialogMode = false;
             currentLine = 0;
         }
         else
         {
             theText.text = textLines[currentLine];
         }  
+    }
+
+    public static void ChangeToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
