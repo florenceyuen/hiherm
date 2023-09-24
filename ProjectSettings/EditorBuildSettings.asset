@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QueCardScene.unity
     guid: 2f31ceda6425148f4a7d7dae81c7b844
+  - enabled: 1
+    path: Assets/Scenes/QuizCardScene.unity
+    guid: bf5fa1741a29b4c49b46a72704fbbe4f
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 46355ed4548984d3a93590bd467413ef
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 5146d217ac5a84236aae386eb89c6148
   m_configObjects: {}

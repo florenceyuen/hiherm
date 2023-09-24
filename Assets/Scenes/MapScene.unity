@@ -650,7 +650,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: QueCardScene
+          m_StringArgument: QuizCardScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &593795265
@@ -769,12 +769,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822992082}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.57, y: -0.57, z: 0}
-  m_LocalScale: {x: 0.077693105, y: 0.077693105, z: 0.077693105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 247.58649, y: -25.336498, z: -4000.4998}
+  m_LocalScale: {x: 3.4534583, y: 3.4534583, z: 3.4534583}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1523024618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &822992085
 CircleCollider2D:
@@ -890,11 +890,11 @@ Transform:
   m_GameObject: {fileID: 993073812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.23416635, w: 0.9721966}
-  m_LocalPosition: {x: -5.6284, y: 1.9744, z: 0}
-  m_LocalScale: {x: 0.069071114, y: 0.069071114, z: 0.069071114}
+  m_LocalPosition: {x: -250.18236, y: 87.76208, z: -4000.4998}
+  m_LocalScale: {x: 3.0702107, y: 3.0702107, z: 3.0702107}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1523024618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.085}
 --- !u!58 &993073815
 CircleCollider2D:
@@ -1353,6 +1353,10 @@ RectTransform:
   - {fileID: 1251246476}
   - {fileID: 277267812}
   - {fileID: 306800085}
+  - {fileID: 822992084}
+  - {fileID: 993073814}
+  - {fileID: 1955534125}
+  - {fileID: 1888909601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1641,11 +1645,11 @@ Transform:
   m_GameObject: {fileID: 1888909599}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.1076533, w: 0.9941885}
-  m_LocalPosition: {x: -3.9641, y: -1.9008, z: 0}
-  m_LocalScale: {x: 0.077693105, y: 0.077693105, z: 0.077693105}
+  m_LocalPosition: {x: -176.20422, y: -84.490555, z: -4000.4998}
+  m_LocalScale: {x: 3.4534583, y: 3.4534583, z: 3.4534583}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1523024618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.36}
 --- !u!58 &1888909602
 CircleCollider2D:
@@ -1894,12 +1898,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955534123}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.59, y: 1.9, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 159.57549, y: 84.454994, z: -4000.4998}
+  m_LocalScale: {x: 2.6669998, y: 2.6669998, z: 2.6669998}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1523024618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1955534126
 CircleCollider2D:
@@ -1943,8 +1947,4 @@ SceneRoots:
   - {fileID: 158715306}
   - {fileID: 1319849821}
   - {fileID: 1523024618}
-  - {fileID: 822992084}
-  - {fileID: 993073814}
-  - {fileID: 1955534125}
-  - {fileID: 1888909601}
   - {fileID: 1779436958}
