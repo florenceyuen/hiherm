@@ -8,6 +8,7 @@ public class CollisionController : MonoBehaviour
     private GameObject math;
     private GameObject english;
     private GameObject socialStudies;
+    private bool colliding = false;
     private void Start()
     {
         science = GameObject.Find("science");
@@ -21,26 +22,32 @@ public class CollisionController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        colliding = true;
         if (collision.gameObject.name == "purple planet")
         {
             science.gameObject.SetActive(true);
+            QuizController.topic = "Science";
         }
         if (collision.gameObject.name == "turq planet")
         {
             math.gameObject.SetActive(true);
+            QuizController.topic = "Math";
         }
         if (collision.gameObject.name == "green planet")
         {
             english.gameObject.SetActive(true);
+            QuizController.topic = "English";
         }
         if (collision.gameObject.name == "blue planet")
         {
             socialStudies.gameObject.SetActive(true);
+            QuizController.topic = "Social Studies";
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        colliding = false;
         if (collision.gameObject.name == "purple planet")
         {
             science.gameObject.SetActive(false);
@@ -59,5 +66,10 @@ public class CollisionController : MonoBehaviour
         }
     }
 
-
+    void Update() {
+        // if they press enter while colliding, we should open the quiz
+        if (Input.GetKeyDown(KeyCode.Return) && colliding) {
+            ChangeScene.ChangeToScene("QuizCardScene");
+        }
+    }
 }
