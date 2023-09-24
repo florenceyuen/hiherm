@@ -14,8 +14,10 @@ public class TextImporter4 : MonoBehaviour
     public int currentLine;
     public int endAtLine;
 
-    // public PlayerController player;
+    public bool dialogMode = true;
 
+    // public PlayerController player;
+     
     void Start()
     {
         // player = findObjectOfType<PlayerController>();
@@ -32,30 +34,20 @@ public class TextImporter4 : MonoBehaviour
     }
 
     void Update()
-    {
-
-        theText.text = textLines[currentLine];
-
-       /* if (currentLine > endAtLine)
-        {
-            textBox.SetActive(false);
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                currentLine += 1;
-            }
-        } */
-
+    { 
         if (Input.GetKeyDown(KeyCode.Return))
         {
             currentLine += 1;
         }
-
         if(currentLine > endAtLine)
         {
             textBox.SetActive(false);
+            dialogMode = false;
+            currentLine = 0;
         }
+        else
+        {
+            theText.text = textLines[currentLine];
+        }  
     }
 }
