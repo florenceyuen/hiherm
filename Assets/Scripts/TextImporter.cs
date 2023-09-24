@@ -36,7 +36,7 @@ public class TextImporter4 : MonoBehaviour
 
         theText.text = textLines[currentLine];
 
-        if (currentLine > endAtLine)
+       /* if (currentLine > endAtLine)
         {
             textBox.SetActive(false);
         }
@@ -46,6 +46,16 @@ public class TextImporter4 : MonoBehaviour
             {
                 currentLine += 1;
             }
+        } */
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            currentLine += 1;
+        }
+
+        if(currentLine > endAtLine)
+        {
+            textBox.SetActive(false);
         }
     }
 }
