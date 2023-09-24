@@ -8,6 +8,7 @@ public class CollisionController : MonoBehaviour
     private GameObject math;
     private GameObject english;
     private GameObject socialStudies;
+    // private QuizController QuizController;
     private bool colliding = false;
     private void Start()
     {
@@ -19,6 +20,7 @@ public class CollisionController : MonoBehaviour
         math.gameObject.SetActive(false);
         english.gameObject.SetActive(false);
         socialStudies.gameObject.SetActive(false);
+        // QuizController = GameObject.Find("GameManager").GetComponent<QuizController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,22 +28,22 @@ public class CollisionController : MonoBehaviour
         if (collision.gameObject.name == "purple planet")
         {
             science.gameObject.SetActive(true);
-            QuizController.topic = "Science";
+            QuizController.changeTopic("Science");
         }
         if (collision.gameObject.name == "turq planet")
         {
             math.gameObject.SetActive(true);
-            QuizController.topic = "Math";
+            QuizController.changeTopic("Math");
         }
         if (collision.gameObject.name == "green planet")
         {
             english.gameObject.SetActive(true);
-            QuizController.topic = "English";
+            QuizController.changeTopic("English");
         }
         if (collision.gameObject.name == "blue planet")
         {
             socialStudies.gameObject.SetActive(true);
-            QuizController.topic = "Social Studies";
+            QuizController.changeTopic("Social Studies");
         }
     }
 

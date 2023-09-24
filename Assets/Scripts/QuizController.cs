@@ -14,12 +14,16 @@ public class QuizController : MonoBehaviour
     
     public static string topic = "Science";
 
-    private int currentQuiz = 0;
+    private static int currentQuiz = 0;
 
     private ColorBlock defaultColours;
 
+    public static int scoreNumerator = 0;
+    public static int scoreDenominator = 0;
+
     // Start is called before the first frame update
     void Start() {
+        Debug.Log("the quiz controller exists.");
         loadQuizzes();
         defaultColours = quizPanel.transform.GetChild(1).GetComponent<Button>().colors;
         loadQuestion();
@@ -132,6 +136,12 @@ public class QuizController : MonoBehaviour
         };
     }
 
+    static public void changeTopic(string newTopic) {
+        topic = newTopic;
+        currentQuiz = 0;
+        scoreNumerator = 0;
+    }
+
     void loadQuestion() {
         // reset the appearance of and enable all the buttons
         for (int i = 1; i < 5; i++) {
@@ -170,6 +180,10 @@ public class QuizController : MonoBehaviour
             incorrectColors.normalColor = Color.red;
             quizPanel.transform.GetChild(selected).GetComponent<Button>().colors = incorrectColors;
         }
+        // otherwise let's give them a point
+        else {
+            scoreNumerator++;
+        }
         
         // update the text at the bottom to tell them if it was correct
         if (selected == quizzes[topic][currentQuiz].correct) {
@@ -179,15 +193,22 @@ public class QuizController : MonoBehaviour
         }
 
         // make the next button appear
-        if (quizzes[topic].Count > currentQuiz + 1) {
-            nextButton.gameObject.SetActive(true);
-        }
+        nextButton.gameObject.SetActive(true);
     }
 
     // advance to the next quiz
     public void nextQuiz() {
         currentQuiz++;
-        loadQuestion();
+        // if we are at the end of the quiz, change scene
+        if (currentQuiz >= quizzes[topic].Count) {
+            scoreDenominator = quizzes[topic].Count;
+            // reset the question number for the next quiz
+            currentQuiz = 0;
+            // switch scene
+            ChangeScene.ChangeToScene("EndingScene");
+        } else {
+            loadQuestion();
+        }
     }
 
     // Update is called once per frame
